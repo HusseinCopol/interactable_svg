@@ -1,6 +1,6 @@
 # interactable SVG
 
-A flutter package for interact with different parts of a SVG.
+A flutter package for interacting with different parts of an SVG.
 
 ![example](https://user-images.githubusercontent.com/43154747/208787228-6dda3327-585d-4bae-a099-ad2b6f9170ed.gif)
 
@@ -65,7 +65,7 @@ for example:
 | props                   |           types            |                     description                      |
 | :---------------------- |:--------------------------:|:----------------------------------------------------:|
 | key        |           `Key?`           |                                                      |
-| svgAddress       |          `String`          |     Address of SVG like  "assets/floor_map.svg"      |
+| svgAddress       |          `String`          |    Address of an SVG like  "assets/floor_map.svg"    |
 | width           |         `double?`          |     SVG width. Default value is double.infinity      |
 | height       |         `double?`          |     SVG height. Default value is double.infinity     |
 | strokeColor       |          `Color?`          |             Color of the region borders              |
