@@ -66,20 +66,20 @@ for example:
 | :---------------------- |:----------------------:|:----------------------------------------------------:|
 | key        |         `Key?`         |                                                      |
 | svgAddress       |        `String`        |     Address of SVG like  "assets/floor_map.svg"      |
-| width           |       `double?`        |     Map width. Default value is double.infinity      |
-| height       |       `double?`        |     Map height. Default value is double.infinity     |
+| width           |       `double?`        |     SVG width. Default value is double.infinity      |
+| height       |       `double?`        |     SVG height. Default value is double.infinity     |
 | strokeColor       |        `Color?`        |             Color of the region borders              |
 | selectedColor       |        `Color?`        |             Color of the selected region             |
 | strokeWidth |       `double?`       |             Width of the region borders              |
-| toggleEnable |       `boolean?`       |      Region selecting act as like toggle button      |
+| toggleEnable |       `bool?`       |      Region selecting act as like toggle button      |
 | onChanged       | `Function(City? city)` |       Returns new region value when it changed       |
 | unSelectableId |       `String?`        |      Makes that region wi that id non selective      |
-| centerDotEnable |       `boolean?`       |       place a dot in the center of the region        |
-| centerTextEnable |       `boolean?`       | place name of the region at the center of the region |
+| centerDotEnable |       `bool?`       |       place a dot in the center of the region        |
+| centerTextEnable |       `bool?`       | place name of the region at the center of the region |
 | centerTextStyle |      `TextStyle?`      |             Style of name of the region              |
 | dotColor |        `Color?`        |     Color of the dot in the center of the region     |
 
 Author
 ------
 
-* [Hussein Hajian](https://github.com/HusseinCopol)
+* [Hussein Copol](https://github.com/HusseinCopol)
