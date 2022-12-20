@@ -2,7 +2,7 @@
 
 A flutter package for interact with different parts of a SVG.
 
-![ezgif-1-329e06ec0d](https://user-images.githubusercontent.com/43154747/208778220-8c16a386-f92d-46b8-a8a3-b9028c3abb29.gif)
+![example](https://user-images.githubusercontent.com/43154747/208787228-6dda3327-585d-4bae-a099-ad2b6f9170ed.gif)
 
 
 ## Getting Started
@@ -32,7 +32,7 @@ import 'package:interactable_svg/interactable_svg/interactable_svg.dart';
             svgAddress: "assets/floor_map.svg",
             onChanged: (region) {
               setState(() {
-                selectedCity = region;
+                selectedRegion = region;
 
               });
             },
@@ -62,22 +62,22 @@ for example:
 
 ```
 ## Props
-| props                   |         types          |                     description                      |
-| :---------------------- |:----------------------:|:----------------------------------------------------:|
-| key        |         `Key?`         |                                                      |
-| svgAddress       |        `String`        |     Address of SVG like  "assets/floor_map.svg"      |
-| width           |       `double?`        |     SVG width. Default value is double.infinity      |
-| height       |       `double?`        |     SVG height. Default value is double.infinity     |
-| strokeColor       |        `Color?`        |             Color of the region borders              |
-| selectedColor       |        `Color?`        |             Color of the selected region             |
-| strokeWidth |       `double?`       |             Width of the region borders              |
-| toggleEnable |       `bool?`       |      Region selecting act as like toggle button      |
-| onChanged       | `Function(City? city)` |       Returns new region value when it changed       |
-| unSelectableId |       `String?`        |      Makes that region wi that id non selective      |
-| centerDotEnable |       `bool?`       |       place a dot in the center of the region        |
-| centerTextEnable |       `bool?`       | place name of the region at the center of the region |
-| centerTextStyle |      `TextStyle?`      |             Style of name of the region              |
-| dotColor |        `Color?`        |     Color of the dot in the center of the region     |
+| props                   |           types            |                     description                      |
+| :---------------------- |:--------------------------:|:----------------------------------------------------:|
+| key        |           `Key?`           |                                                      |
+| svgAddress       |          `String`          |     Address of SVG like  "assets/floor_map.svg"      |
+| width           |         `double?`          |     SVG width. Default value is double.infinity      |
+| height       |         `double?`          |     SVG height. Default value is double.infinity     |
+| strokeColor       |          `Color?`          |             Color of the region borders              |
+| selectedColor       |          `Color?`          |             Color of the selected region             |
+| strokeWidth |         `double?`          |             Width of the region borders              |
+| toggleEnable |          `bool?`           |      Region selecting act as like toggle button      |
+| onChanged       | `Function(Region? region)` |       Returns new region value when it changed       |
+| unSelectableId |         `String?`          |      Makes that region wi that id non selective      |
+| centerDotEnable |          `bool?`           |       place a dot in the center of the region        |
+| centerTextEnable |          `bool?`           | place name of the region at the center of the region |
+| centerTextStyle |        `TextStyle?`        |             Style of name of the region              |
+| dotColor |          `Color?`          |     Color of the dot in the center of the region     |
 
 Author
 ------

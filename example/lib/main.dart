@@ -35,7 +35,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
 
-  Region? selectedCity;
+  Region? selectedRegion;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
             svgAddress: "assets/floor_map.svg",
             onChanged: (region) {
               setState(() {
-                selectedCity = region;
+                selectedRegion = region;
 
               });
             },

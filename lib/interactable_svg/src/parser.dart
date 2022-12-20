@@ -21,7 +21,7 @@ class Parser {
 
   Parser._init();
 
-  Future<List<Region>> svgToCityList(String svgAddress) async {
+  Future<List<Region>> svgToRegionList(String svgAddress) async {
 
     final svgMain = await rootBundle.loadString(
       svgAddress

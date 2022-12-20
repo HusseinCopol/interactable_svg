@@ -5,7 +5,7 @@ import '../size_controller.dart';
 
 class RegionPainter extends CustomPainter {
   final Region region;
-  final Region? selectedCity;
+  final Region? selectedRegion;
   final Color? strokeColor;
   final Color? selectedColor;
   final Color? dotColor;
@@ -20,7 +20,7 @@ class RegionPainter extends CustomPainter {
   double _scale = 1.0;
 
   RegionPainter({required this.region,
-    required this.selectedCity,
+    required this.selectedRegion,
     this.selectedColor,
     this.strokeColor,
     this.dotColor,
@@ -53,7 +53,7 @@ class RegionPainter extends CustomPainter {
     _scale = sizeController.calculateScale(size);
     canvas.scale(_scale);
 
-    if (region.id == selectedCity?.id) {
+    if (region.id == selectedRegion?.id) {
       canvas.drawPath(region.path, selectedPen);
     }
     if((centerDotEnable ?? false )&& region.id!=unSelectableId)

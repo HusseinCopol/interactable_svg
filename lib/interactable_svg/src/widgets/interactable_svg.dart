@@ -50,12 +50,12 @@ class InteractableSvgState extends State<InteractableSvg> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _loadCityList();
+      _loadRegionList();
     });
   }
 
-  _loadCityList() async {
-    final list = await Parser.instance.svgToCityList(widget.svgAddress);
+  _loadRegionList() async {
+    final list = await Parser.instance.svgToRegionList(widget.svgAddress);
     _regionList.clear();
     setState(() {
       _regionList.addAll(list);
@@ -73,7 +73,7 @@ class InteractableSvgState extends State<InteractableSvg> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        for (var city in _regionList) _buildStackItem(city),
+        for (var region in _regionList) _buildStackItem(region),
       ],
     );
   }
@@ -87,7 +87,7 @@ class InteractableSvgState extends State<InteractableSvg> {
         isComplex: true,
         foregroundPainter: RegionPainter(
             region: region,
-            selectedCity: selectedRegion,
+            selectedRegion: selectedRegion,
             dotColor: widget.dotColor,
             selectedColor: widget.selectedColor,
             strokeColor: widget.strokeColor,
