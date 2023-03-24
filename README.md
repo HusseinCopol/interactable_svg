@@ -40,6 +40,7 @@ import 'package:interactable_svg/interactable_svg/interactable_svg.dart';
             width: double.infinity,
             height: double.infinity,
             toggleEnable: true,
+            isMultiSelectable: false,
             dotColor: Colors.black,
             selectedColor: Colors.red.withOpacity(0.5),
             strokeColor: Colors.blue,
@@ -72,6 +73,7 @@ for example:
 | selectedColor       |          `Color?`          |             Color of the selected region             |
 | strokeWidth |         `double?`          |             Width of the region borders              |
 | toggleEnable |          `bool?`           |      Region selecting act as like toggle button      |
+| isMultiSelectable |          `bool?`           |          select multiple regions at once         |
 | onChanged       | `Function(Region? region)` |       Returns new region value when it changed       |
 | unSelectableId |         `String?`          |      Makes that region wi that id non selective      |
 | centerDotEnable |          `bool?`           |       place a dot in the center of the region        |

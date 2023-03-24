@@ -17,6 +17,7 @@ class InteractableSvg extends StatefulWidget {
   final String? unSelectableId;
   final bool? centerDotEnable;
   final bool? centerTextEnable;
+  final bool? isMultiSelectable;
   final TextStyle? centerTextStyle;
 
   const InteractableSvg({Key? key,
@@ -32,7 +33,9 @@ class InteractableSvg extends StatefulWidget {
     this.centerDotEnable,
     this.centerTextEnable,
     this.centerTextStyle,
-    this.toggleEnable})
+    this.toggleEnable,
+    this.isMultiSelectable
+  })
       : super(key: key);
 
   @override
@@ -41,8 +44,8 @@ class InteractableSvg extends StatefulWidget {
 
 class InteractableSvgState extends State<InteractableSvg> {
   final List<Region> _regionList = [];
-  Region? selectedRegion;
-
+  //Region? selectedRegion;
+  List<Region> selectedRegion=[];
   final _sizeController = SizeController.instance;
   Size? mapSize;
 
@@ -65,7 +68,8 @@ class InteractableSvgState extends State<InteractableSvg> {
 
   void clearSelect() {
     setState(() {
-      selectedRegion = null;
+      //selectedRegion = null;
+      selectedRegion.clear();
     });
   }
 
@@ -112,12 +116,18 @@ class InteractableSvgState extends State<InteractableSvg> {
   void _toggleButton(Region region) {
     if(region.id != widget.unSelectableId){
     setState(() {
-      if (selectedRegion == region) {
-        selectedRegion = null;
+      if (selectedRegion.contains(region)) {
+        selectedRegion.remove(region) ;
       } else {
-        selectedRegion = region;
+        if(widget.isMultiSelectable ?? false){
+          selectedRegion.add(region)  ;
+        } else {
+          selectedRegion.clear();
+          selectedRegion.add(region)  ;
+        }
+
       }
-      widget.onChanged.call(selectedRegion);
+      widget.onChanged.call(region);
     });
   }
   }
@@ -125,8 +135,15 @@ class InteractableSvgState extends State<InteractableSvg> {
   void _useButton(Region region) {
     if (region.id != widget.unSelectableId) {
       setState(() {
-        selectedRegion = region;
-        widget.onChanged.call(selectedRegion);
+        if(widget.isMultiSelectable ?? false){
+          selectedRegion.add(region)  ;
+          widget.onChanged.call(region);
+        }else {
+          selectedRegion.clear();
+          selectedRegion.add(region)  ;
+          widget.onChanged.call(region);
+        }
+
       });
     }
   }

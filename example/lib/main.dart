@@ -70,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
             height: double.infinity,
             toggleEnable: true,
+            isMultiSelectable: false,
             dotColor: Colors.black,
             selectedColor: Colors.red.withOpacity(0.5),
             strokeColor: Colors.blue,
@@ -77,7 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
             centerDotEnable:true ,
             centerTextEnable:true ,
             strokeWidth: 2.0,
-            centerTextStyle: const TextStyle(fontSize: 12,color: Colors.black),
+            centerTextStyle: const TextStyle(fontSize: 12,color: Colors.black,
+
+            ),
 
 
           ),
