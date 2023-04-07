@@ -47,9 +47,8 @@ class SizeController {
     // Aspect Ratio
     double newWidth = containerSize.width, newHeight = containerSize.height;
     if (containerSize.width > containerSize.height) {
-      newHeight = 1 /(mapSize.aspectRatio / containerSize.width);
-    }
-    else {
+      newHeight = 1 / (mapSize.aspectRatio / containerSize.width);
+    } else {
       newHeight = containerSize.width / mapSize.aspectRatio;
     }
     containerSize = Size(newWidth, newHeight);
@@ -61,6 +60,6 @@ class SizeController {
 
     return mapScale;
   }
-  
-  double inverseOfScale(double scale) => 1.0/scale;
+
+  double inverseOfScale(double scale) => 1.0 / scale;
 }

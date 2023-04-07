@@ -62,6 +62,15 @@ for example:
   <path id="118" name="room 9" class="st0" d="M55 508h101.26v330H55Z" />;
 
 ```
+To select a region without clicking on the SVG see the below code.For better understanding check the example.
+```dart
+final GlobalKey<InteractableSvgState> key = GlobalKey();
+InteractableSvg(
+      key: mapKey,...)
+
+key.currentState?.toggleButton(region);
+key.currentState?.holdButton(region);
+```
 ## Props
 | props                   |           types            |                     description                      |
 | :---------------------- |:--------------------------:|:----------------------------------------------------:|

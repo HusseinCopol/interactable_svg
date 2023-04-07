@@ -1,3 +1,7 @@
+## 0.0.3
+* Added access to toggleButton and holdButton in InteractableSvgState
+
+
 ## 0.0.2
 
 * Added  multiple select

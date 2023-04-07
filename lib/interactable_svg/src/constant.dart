@@ -1,4 +1,3 @@
 class Constants {
-  static const MAP_REGEXP = '.* id="(.*)" name="(.*)" .* d="(.*)"';
-
+  static const mapRegexp = '.* id="(.*)" name="(.*)" .* d="(.*)"';
 }
