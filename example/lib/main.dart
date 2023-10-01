@@ -61,8 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
               child:InteractableSvg(
+
                 key: mapKey,
                 svgAddress: "assets/floor_map.svg",
+
+
                 onChanged: (region) {
                   setState(() {
                     selectedRegion = region;

@@ -1,4 +1,8 @@
 ## 0.0.3
+* Added  InteractableSvg.network
+
+
+## 0.0.3
 * Added access to toggleButton and holdButton in InteractableSvgState
 
 

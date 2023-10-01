@@ -22,7 +22,7 @@ import 'package:interactable_svg/interactable_svg/interactable_svg.dart';
 ```
 
 ## Usage
-
+Basic usage (rendering SVG from asset folder):
 ```dart
         InteractiveViewer(
           scaleEnabled: true,
@@ -53,6 +53,17 @@ import 'package:interactable_svg/interactable_svg/interactable_svg.dart';
 
           ),
         )
+```
+
+Network usage (rendering SVG from an URL):
+```dart
+          InteractableSvg.network(
+            svgAddress: "www.example.com",
+            fileName: "/floor_map.svg",
+            .
+            .
+          ),
+        
 ```
 
 Also your SVG must follow the following pattern.For better understanding see the example SVG.
