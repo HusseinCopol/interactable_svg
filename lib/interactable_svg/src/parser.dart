@@ -1,4 +1,3 @@
-
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:interactable_svg/interactable_svg/src/utils/utils.dart';
 import 'package:svg_path_parser/svg_path_parser.dart';
@@ -20,11 +19,7 @@ class Parser {
   Parser._init();
 
   Future<List<Region>> svgToRegionList(String svgAddress) async {
-
-
     final svgMain = await rootBundle.loadString(svgAddress);
-
-
 
     List<Region> regionList = [];
 
@@ -42,18 +37,32 @@ class Parser {
     });
     return regionList;
   }
-  Future<List<Region>> svgToRegionListNetwork(String svgAddress,String fileName) async {
 
+  Future<List<Region>> svgToRegionListString(String svgAddress) async {
+    final svgMain = svgAddress;
 
+    List<Region> regionList = [];
 
-      var temp = await httpGet(svgAddress,fileName);
+    final regExp = RegExp(Constants.mapRegexp,
+        multiLine: true, caseSensitive: false, dotAll: false);
 
+    regExp.allMatches(svgMain).forEach((regionData) {
+      final region = Region(
+          id: regionData.group(1)!,
+          name: regionData.group(2)!,
+          path: parseSvgPath(regionData.group(3)!));
 
-    final String svgMain=temp.body;
+      sizeController.addBounds(region.path.getBounds());
+      regionList.add(region);
+    });
+    return regionList;
+  }
 
+  Future<List<Region>> svgToRegionListNetwork(
+      String svgAddress, String fileName) async {
+    var temp = await httpGet(svgAddress, fileName);
 
-
-
+    final String svgMain = temp.body;
 
     List<Region> regionList = [];
 
@@ -72,5 +81,3 @@ class Parser {
     return regionList;
   }
 }
-
-

@@ -66,6 +66,17 @@ Network usage (rendering SVG from an URL):
         
 ```
 
+String usage (rendering SVG from a String):
+```dart
+          InteractableSvg.string(
+            svgAddress: "<svg> </svg>",
+          
+            .
+            .
+          ),
+        
+```
+
 Also your SVG must follow the following pattern.For better understanding see the example SVG.
 ```
 '.* id="(.*)" name="(.*)" .* d="(.*)"'
