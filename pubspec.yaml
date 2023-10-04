@@ -1,6 +1,6 @@
 name: interactable_svg
 description: Flutter package to interact with different regions of an SVG.
-version: 0.0.6
+version: 0.0.7
 homepage: https://github.com/HusseinCopol/interactable_svg.git
 
 environment:

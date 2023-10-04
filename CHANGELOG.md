@@ -1,3 +1,6 @@
+## 0.0.7
+* Updated the example
+
 ## 0.0.6
 * Updated http dependency to 1.1.0 to fix flutter web bug
 ## 0.0.5
